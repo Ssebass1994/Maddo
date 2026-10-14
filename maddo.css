@@ -1,0 +1,139 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+background: #538f8f;
+color: rgb(79, 139, 79);
+}
+/*Navigation bar */
+header {
+    background-color: rgb(109, 220, 109);
+    border-top: 5px solid rgb(109, 220, 109);
+    box-shadow: 0 2px 6px rgba(114, 243, 22, 0.1);
+}
+navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+}
+.logo img {
+    width: 100px;
+    height: 90px;
+}
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+}
+.menu a {
+    text-decoration: none;
+    color: rgb(217, 227, 217);
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+.menu a:hover {
+    color: rgb(221, 236, 221);
+}   
+
+/* Sign in button dropdown */
+.dropdown .dropdown-content { 
+    top: 100%;
+    left: 0;
+     }
+.dropdown details{ 
+    position: relative;
+    display:block; }
+.dropdown-content {
+    /*background: linear-gradient(to right, rgb(109, 220, 109), rgb(109, 220, 109));*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  /*  overflow: hidden;
+    float: right; */
+    top: 100%;
+    right: 0;
+    z-index: 10 
+}
+  
+nav .dropdown summary {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.75rem 1rem 0.25rem;
+    cursor: pointer;
+    list-style: none;
+}
+.dropdown summary::after {
+    content: "";
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid #0d3b66;
+    border-bottom: 2px solid #0d3b66;
+    transform: rotate(45deg);
+    margin-top: -0.25rem;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+/*Heading section */
+.hero { text-align: center; padding: 40px 16px 20px;}
+.hero h1 {
+    font-size: 1.8rem;
+    color:black ;
+    text-transform: uppercase;
+}
+.hero h2 { margin-top: 14px; font-size: 1.4rem;}
+.hero h3 { margin-top: 14px; font-size: 1.2rem; color: rgb(18, 7, 135); }
+.hero h4 { margin-top: 14px; font-size: 1.2rem; color: rgb(18, 7, 135); }
+.hero h5 { margin-top: 14px; font-size: 1.2rem; color: rgb(18, 7, 135); }
+.hero h6 { margin-top: 14px; font-size: 1.2rem; color: rgb(18, 7, 135); }
+.hero h7 { margin-top: 14px; font-size: 1.2rem; color: rgb(18, 7, 135); }
+.hero img { margin-top: 15px; width: 70%; max-width: 300px; height: auto; 
+    border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+
+    .slider { 
+        width: 300%;
+        max-width: 2500px;
+        height: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+    }
+    .slides {
+         display: flex; 
+        animation: slide 15s infinite;
+         width: 500%;
+         height: 100%;
+        }
+        .slide {
+            width: 16.6666666667%;
+            height: 100%;
+        }
+        .slides img {
+            width: 20%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+@keyframes slide {
+  0%, 15% {transform:  translateX(0%); }
+  18%, 33% {transform: translateX(-16.6666666667%); }
+  36%, 51% {transform: translateX(-33.3333333333%); }
+  54%, 69% {transform: translateX(-50%); }
+  72%, 87% {transform: translateX(-66.6666666667%); }
+  90%, 98% {transform:  translateX(83.3333333333%); }
+  100%     {transform: translateX (0%); }
+} 
+
+.slider:hover .slides { animation-play-state: paused; }
+
+@media (max-width: 600pt) { 
+    .slider { height: 220px; }
+}
