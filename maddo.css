@@ -170,53 +170,60 @@ nav .dropdown summary {
 .hero img { margin-top: 15px; width: 70%; max-width: 300px; height: auto; 
     border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
 
-   /* Slider Container */
-.slider {
-  width: 100%;
-  max-width: 1100px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+.slideshow {
+    width: 90%;
+    max-width: 2500px;
+    height: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Slides track (if using a horizontal flex/scroll layout) */
-.slides {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Hide scrollbar for clean look */
+.slideshow img {
+    width: 90%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.slides::-webkit-scrollbar {
-  display: none;
-}
+        .slideshow {
+            width: 90%;
+            max-width: 2500px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #999;
+        }
 
-/* Individual Slide */
-.slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 450px; /* Adjust height for desktop screens */
-  scroll-snap-align: center;
-}
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-/* Images inside slides */
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures images fill the slide nicely without squishing */
-  display: block;
-}
+        .slideshow img.active {
+            opacity: 1;
+        }
 
-/* Responsive adjustment for mobile devices */
-@media (max-width: 768px) {
-  .slide {
-    height: 280px; /* Smaller height for mobile screens */
-  }
-}
+        @media (max-width: 600px) {
+            .slideshow {
+                height: 250px;
+            }
+        }
+
 /* Features section */
 .features-grid {
     display: grid;
@@ -233,7 +240,7 @@ nav .dropdown summary {
 }
 
 .feature-icon {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     margin-bottom: 15px;
     display: block;
 }
